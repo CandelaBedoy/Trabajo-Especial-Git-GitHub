@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/loginestilo.css">
+    </head>
+    <body>
+<h1>MEDIA PHONE WEB</h1>
+        <nav>
+            <a href="html1.html"class="nav-enlace">Inicio</a>
+            <a href="formulario.html"class="nav-enlace">Unite a MPW</a>
+    </nav>
+
+    <h2>BIENVENIDO</h2>
+<p>Registrate y se miembro de Media Phone Web</p>
+<form action="" name="formulario" method="get">
+Nombre
+<input type="text" placeholder="Ingresá tu Nombre" name="nombre" id="nombre" maxlength="30" class="registro">
+Sexo:
+<input type="radio" name="sexo" id= Masculino value="Masculino"> Masculino
+<label for="Masculino"></label>
+<input type="radio"name="sexo"id=Femenino value="Femenino" > Femenino
+<label for="Femenino"></label>
+<input type="radio"name="sexo"id=Otro value="Otro">Otro
+<label for="Otro"></label>
+<br>
+Nombre de usuario
+<input type="text" placeholder="Ingresá un Usuario" name=""class="registro">
+Email
+<input type="email" placeholder="Ingresá tu Email" id="email" name="email"class="registro">
+<br>
+Contraseña
+<input type="password" placeholder="Ingresá una Contraseña" name="contraseña"class="registro">
+<br>
+Selecciona tu Pais
+<select name="Pais" id="Pais"class="registro">
+    <option value="Argentina">Argentina</option>
+    <option value="Chile">Chile</option>
+    <option value="Colombia">Colombia</option>
+    <option value="Peru">Peru</option>
+    <option value="Uruguay">Uruguay</option>
+    <option value="Venezuela">Venezuela</option>
+    <option value="Otro">Otro</option>
+
+</select>
+<br>
+<input type="checkbox" name="terminos" id="terminos"> Terminos y Condiciones
+<br>
+<p>7251</p>
+
+<label id= "ebcatchaptext"></label>
+<input type="text" id="abcatchaptextinput"/>
+<button id="enviar">Enviar</button>
+<input class="botonregistro" type="submit" id="btn" value="Enviar" name="btn">
+</form>
+  <script>(function(){
+        let nombre = document.getElementById("nombre");
+        nombre.focus();
+          let formulario = document.getElementsByTagName('formulario')[0],
+         elementos= document.formulario.elements;
+          let boton = document.getElementById("btn");
+          function validarnombre(e){
+           if (document.formulario.nombre.value==0) {
+            alert("Falta Escribir tu Nombre");
+            e.preventDefault();
+           }
+
+          }
+          function validarRadio(e){
+           if (document.formulario.sexo[0].checked==true || document.formulario.sexo[1].checked==true) {}
+            else{
+             alert("Sexo no indicado");
+             e.preventDefault();
+            }
+      
+          }
+          function validarterminos(e){
+           if (document.formulario.terminos.checked==true) {}
+            else{
+             alert("Acepta los Terminos y Condiciones");
+             e.preventDefault();
+            }
+          }
+          let validar = function(e){
+           validarnombre(e);
+           validarRadio(e);
+           validarterminos(e);
+          };
+          document.formulario.addEventListener("submit",validar);
+      })()</script>
+    
+</body>
+</html>
